@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap');
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin:0;
+}
+
+p, h1, h2{
+  font-family: 'Signika', sans-serif;
+}
+
+p{
+  margin:0.8rem;
+  font-weight: 500;
+  font-size:1.1rem;
+}
+.grid-3{
+  margin-top:40px;
+  display: inline-grid;
+  text-align: center;
+  padding: 40px 40px 0;
+  max-width: 340px;
+  background: #fff;
+  box-shadow: 0 4px 40px rgb(34 33 42 / 25%);
+  grid-gap: 5px;
+  height:570px;
+  margin:10px;
+}
+
+.grid-2{
+  margin-top:40px;
+  display: inline-grid;
+  text-align: center;
+  padding: 40px 40px 0;
+  max-width: 340px;
+  margin:10px;
+  gap:15px;
+}
+
+.center{
+  text-align: center;
+}
+
+section {
+  background-color:#f7f8fb;
+  padding-top:90px;
+  padding-bottom:90px;
+}
+
+.white{
+  background-color:white;
+}
+
+.property-flex{
+  display: flex;
+  justify-content: space-around;
+  padding:10px;
+  background-color: white;
+}
+
+.property-content{
+  text-align: left;
+  font-size: 1.2rem;
+  line-height : 2rem;
+  color: black;
+}
+
+.box-shadow{
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.main-margin{
+  max-width: 800px;
+  margin-left: auto;
+  margin-right : auto;
+  margin-top:30px
+}
+
+.property-button{
+  background-color: white;
+  margin:4px;
+  font-size: 1.6rem;
+  border:none;
+  background: none;
+  font-weight: 100px;
+  cursor: pointer;
+  outline: none
+}
+
+
+form input{
+  height: 40px;
+  border: 2px solid #37C977;
+  font-size: 1.15rem;
+  width:200px;
+  border-radius: 5px;
+  outline: none;
+}
+
+form button{
+  height: 40px;
+  background: #37C977;
+  color:white;
+  border:none;
+  margin-left:10px;
+  width:60px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.property-img img{
+  width:99.4%;
+  position: relative;
+}
+
+iframe{
+  width:100%;
+  height:250px;
+}
+.carousel-item {
+  border: 3px solid red;
+  display: inline-block
+}
+
+.hidden {
+  display: none;
+}
+
+.slick-arrow{
+  height:50px;
+  width:50px;
+  opacity: 0.9;
+}
+
+.slick-next{
+  right: 20px;
+}
+.slick-prev{
+  left: 20px;
+  z-index: 1;
+}
+
+.p-flex{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top:10px;
+}
+
+.container{
+  padding:20px;
+  margin-top: 150px;
+}
+
+.search{
+  color: #37C977
+}
+
+.form-seperator{
+  height: 2px;
+  width: 100%;
+  background: #f4f4f4;
+  margin : 30px 0 30px 0;
+}
+
+.input-seperator{
+  height: 2px;
+  width: 100%;
+  background: white;
+  margin : 30px 0 30px 0;
+}
+
+.m-flex{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.s-button{
+  border:2px solid #f4f4f4;
+  padding:30px;
+  cursor: pointer;
+}
+
+select{
+  font-size:1.5rem;
+  padding: 0.7em 4em 0.7em 1.5em;
+  background-color: #E34E69;
+  color:white;
+  outline: none;
+  border : none
+}
+
+.a-button{
+  font-size:1.5rem;
+  padding: 0.7em 4em 0.7em 1.5em;
+  background-color: #E34E69;
+  color:white;
+  outline: none;
+  border : none;
+  margin:20px;
+  cursor: pointer;
+  width:100%;
+}
+
+.selected{
+  background: #5A9BEE;
+  color: white;
+}
+
+option{
+  background: #E34E69;
+}
+.date{
+  padding: 0.7em 1.5em 0.7em 1.5em;
+  border:1px solid #f4f4f4;
+  width :300px;
+  text-align: center;
+  background: #E34E69;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.button{
+  appearance: none;
+  border: none;
+  background: none;
+  text-decoration: underline;
+  color: #E34E69;
+  cursor: pointer;
+}
+
+.blog{
+  padding : 0px;
+}
+textarea{
+  padding-bottom:70px;
+  padding-top:10px;
+  width:900px;
+  width:99%;
+}
+
+.color{
+    color: #686d71;
+}
+
+.width{
+  width:200px;
+  padding:20px!important;
+  font-size: 1.3rem;
+}
+
+.b-flex{
+  display: flex;
+  justify-content: center;
+  padding-top:10px;
+}
+@media (max-width: 500px){
+  h1{
+    font-size:1.8rem;
+  }
+  h2{
+    font-size: 1.4rem
+  }
+}
+
+@media (max-width : 760px){
+  .manager{
+    margin-top :30px;
+  }
+}
+@media (max-width : 920px){
+  .main-text{
+    width:90%!important;
+  }
+
+  .flex{
+    height:70vh!important;
+  }
+
+  .main-text p{
+    margin: 0px!important;
+  }
+}
