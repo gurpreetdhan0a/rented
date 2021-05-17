@@ -17,9 +17,12 @@ class PropertyDetail extends Component {
             slidesToScroll: 1,
             arrow : true
         }
+
+        this.readMore = "Read More"
     }
     state={
-        propertyDetail : {}
+        propertyDetail : {},
+        hidden : true
     }
 
     componentDidMount(){
@@ -27,12 +30,21 @@ class PropertyDetail extends Component {
         window.scroll(0,0);
      }
 
-    
+    toogle(){
+        if(this.readMore === "Read Less")
+        {
+        this.setState({hidden: true});
+        this.readMore = "Read More";
+        }else{
+            this.setState({hidden:false});
+            this.readMore = "Read Less"
+        }
+        
+    }
     render() {
         if(this.props.property === undefined){
             return <h1> hello</h1>
         }
-        console.log(this.props.property)
         return (
             <React.Fragment>
             <div className="center main-margin">
@@ -61,20 +73,73 @@ class PropertyDetail extends Component {
                     </div>
                     <div className="form-seperator"></div>
 
-                    <iframe title="map" src={this.props.property.location} style={{border : 0}} allowfullscreen="" loading="lazy"></iframe>
+                    <iframe title="map" src={this.props.property.location} style={{border : 0}} allowFullScreen="" loading="lazy"></iframe>
 
                     <div className="form-seperator"></div>
                      <div className="left">
                     <h1>Built to impress</h1>
                     <h5>{this.props.property.street}</h5>
                     <p>**ARRANGE AN INSPECTION TIME ONLINE - DETAILS BELOW**</p>
-                    <p>This modern built and large property boasts with features and is conveniently located close to all amenities, features include two generous sized bedrooms both with built in robes, huge open plan living area which leads to the elegant kitchen meals area with gas stainless steel appliances and the added bonus of a dishwasher, central bathroom with shower, bath, toilet and vanity unit and a separate powder room, ducted heating, cooling. alarm system, single lock up garage private courtyard and much more.
-                     <br/>
-                     <br/>
+                    <p>This modern built and large property boasts with features and is conveniently located close to all amenities, features include two generous sized bedrooms both with built in robes, huge open plan living area which leads to the elegant kitchen meals area with gas stainless steel appliances and the added bonus of a dishwasher, central bathroom with shower, bath, toilet and vanity unit and a separate powder room, ducted heating, cooling. alarm system, single lock up garage private courtyard and much more.</p>
+
+                    <p className={`${this.state.hidden ? "hidden" : "display"}`}>
                     Arranging an inspection is easy! To book a time to inspect, simply click Register To Inspect to arrange. By registering, you will be INSTANTLY informed of any updates, changes or cancellations for your appointment
                     <br/><br/>
                     *** COVID-19 Announcement *** If you're attending an open for inspection, we request that you only attend if you are fit and healthy to do so and not under any self-isolation conditions. We request that you maintain a healthy distance from anyone attending the open for inspection, including other prospective buyers and our team members, and if requested wait outside so as to reduce the number of people in the property at any one time. Lastly, please refrain from touching items/fixtures and doors within the properties. If you would like to view something in particular, please request the agent's assistance. Thank you.</p>
+                    <button className = "s-button g-button " onClick={()=>this.toogle()}>{this.readMore}</button>
                     </div>
+                    <div className="form-seperator"></div>
+                    
+                        <h1>Agent details</h1>
+                        <div className="agents-flex">
+                    
+                        <div className="a-card">
+                        <div className="a-flex">
+                            <div>
+                                <img alt="agent-img" src="https://i2.au.reastatic.net/150x200-format=webp/bd5ace3e56daee336f1531ac49966a76de1c9a1fb95090d2f8a6f831397fd114/main.jpg"/>
+                            </div>
+                            <div>
+                                <h2>Contact details</h2>   
+                                <div><a href="tel:123-456-7890">123-546-7890</a>
+                                <br/>
+                                <br/>
+                                <a className="agent-links" href= "mailto: abc@gmail.com">Send Mail</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <span><i className="fas fa-star"></i>
+                        <span><i className="fas fa-star"></i></span>
+                        <span><i className="fas fa-star"></i></span>
+                        <span><i className="fas fa-star"></i></span>
+                        <span><i className="fas fa-star"></i></span></span>
+                        
+                        <div><br/>Address : Manningham, Whitehorse & Eltham, BLACKBURN, VIC 3130</div>
+                    </div>
+                        <div className="a-card">
+                        <div className="a-flex">
+                            <div>
+                                <img alt="agent-img" src="https://i2.au.reastatic.net/150x200-format=webp/657ce891e1e3125e3f3926265f963606c2c2ecabfc634491939475c3b4d251da/main.jpg"/>
+                            </div>
+                            <div>
+                                <h2>Contact details</h2>   
+                                <div><a href="tel:123-4-890">123-54-890</a>
+                                <br/>
+                                <br/>
+                                <a className="agent-links" href= "mailto: abc@gmail.com">Send Mail</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <span><i className="fas fa-star"></i>
+                        <span><i className="fas fa-star"></i></span>
+                        <span><i className="fas fa-star"></i></span>
+                        <span><i className="fas fa-star"></i></span></span>
+                        
+                        <div><br/>Address : Manningham, Whitehorse & Eltham, BLACKBURN, VIC 3130</div>
+                    </div>
+                    </div>
+                    <div className="form-seperator"></div>
               <Link to={{
                   pathname: "/applicationForm",
                   state : {

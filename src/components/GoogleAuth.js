@@ -34,7 +34,7 @@ class GoogleAuth extends Component {
                 <span style={{fontSize: "15px", marginRight:"5px", color:"white"}}>Hi, {this.props.username}</span>
                 <button onClick={this.auth.signOut} className="ui red google g-button"> 
                 <i className="google icon"/>
-                <span>Sign Out</span>
+                <span className="google-text">Sign Out</span>
                 </button>
             </div>
             )
@@ -42,7 +42,7 @@ class GoogleAuth extends Component {
         return (
             <button onClick={this.auth.signIn} className="ui red google g-button"> 
             <i className="google icon"/>
-            <span>Sign In</span>
+            <span className="google-text">Sign In</span>
             </button>
             )
         }

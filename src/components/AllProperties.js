@@ -21,7 +21,8 @@ class AllProperties extends Component {
 
     state={
         searchField : '',
-        searchedProperties: []
+        searchedProperties: [],
+        notFound : undefined
     }
     
     componentDidMount(){ 
@@ -36,23 +37,27 @@ class AllProperties extends Component {
            if (this.name === property.suburb){
              search.push(property);
              this.inputNameRef.current.value = `${this.name + " (" + search[0].postcode + ")"}`;
+           };
+           if(search.length > 0){
+               this.setState({ notFound: false })
+           }else{
+               this.setState({notFound: true})
            }
            return this.setState({searchedProperties : search})
         })
-       
     }
     
     renderProperties(){
-        if(this.state.searchedProperties.length === 0){
+        if(this.state.notFound === true && this.name.length > 0){
+            return <div className="center"><h3 className="color error">No properties found in this area</h3></div>
+        }else if(this.state.notFound === undefined){
+            return (<div className="center"><h3 className="color">(For demo purposes I only added Reservoir and Couburg) </h3></div>)
+        }else if(this.name.length === 0){
             return (<div className="center"><h3 className="color">(For demo purposes I only added Reservoir and Couburg) </h3></div>)
         }
-
-        if (this.state.searchField === true){
-            return <div>Not found</div>
-        }
+    
         return this.state.searchedProperties.map((property,index) =>{
             return (
-                
                 <div key={index} className="center main-margin">
                 <Link to={`/property/${property.id}`}>
                 <div>
@@ -67,7 +72,7 @@ class AllProperties extends Component {
                         <div className="property-content ">
                             <div>
                                 <div>${property.price}</div>
-                                <span>{property.street}, {property.suburb}</span>
+                                <span>{property.street}, {property.suburb.toUpperCase()}, {property.postcode}</span>
                             </div>
                             <div> <i className="fas fa-bed"> {property.bed}</i> <i className="fas fa-bath"> {property.bath} </i> <i className="fas fa-parking"> {property.parking} </i>| {property.type}</div>
                             <span>{property.inspection}</span>
@@ -93,7 +98,7 @@ class AllProperties extends Component {
                 <form className="center">
                     <div>
                     <i className="search icon"></i>
-                        <input ref={this.inputNameRef} id="mySearch" name="q" placeholder="Enter Suburb Name ..." required autoFocus></input>
+                        <input required type="name" ref={this.inputNameRef}  placeholder="Enter Suburb Name ..." autoFocus></input>
                         <button onClick={(e)=>this.handleSubmit(e)}>Search</button>
                     </div>
                 </form>

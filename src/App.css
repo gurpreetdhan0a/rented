@@ -54,11 +54,42 @@ h1{
   border: none;
   cursor: pointer;
 }
+.a-card{
+  width:370px;
+  background-color: #E34E69;
+  padding: 50px;
+  border-radius: 20%;
+  font-size: 1.4rem;
+  margin:auto;
+  color:white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.a-card h2{
+  margin-top:20px;
+  font-size: 1.3rem;
+}
+.a-card a{
+  font-size: 1.3rem;
+  color:white;
+  text-decoration: underline;
+}
+.display{
+  display: block
+}
 
 .post-img{
   position: relative;
 }
-
+.agents-flex{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.agent-links{
+  margin-bottom:20px;
+}
 .post-img img{
   width: 300px;
   height:270px;

@@ -7,7 +7,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 class ApplicationForm extends Component {
     state = {
-        startDate : new Date()
+        startDate : new Date(),
+        newDate : new Date()
     }
 
     componentDidMount(){
@@ -25,7 +26,7 @@ class ApplicationForm extends Component {
         this.property = this.props.location.state.propertyDetail;
 
         if (!this.props.auth.isSignedIn)
-        return <h1 className="center">Please sign in with Google to proceed to Checkout</h1>
+        return <h1 className="center">Please sign in with Google to proceed to the application</h1>
 
 
         return (
@@ -77,7 +78,7 @@ class ApplicationForm extends Component {
             <div className="input-seperator"></div>
             <div>
             <h2 className="color">Lease Start</h2>
-            <DatePicker className="date" selected={this.state.startDate} onChange={date => this.setState({startDate : date})} />
+            <DatePicker className="date" minDate={this.state.newDate} selected={this.state.startDate} onChange={date => this.setState({startDate : date})} />
             </div>
             <div className="input-seperator"></div>
             <div>

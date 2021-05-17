@@ -156,6 +156,10 @@ iframe{
   margin-top: 150px;
 }
 
+.error{
+  color: red!important;
+}
+
 .search{
   color: #37C977
 }
@@ -225,6 +229,13 @@ option{
   color: white;
 }
 
+.fa-star {
+  color:#F3CB2E;
+}
+
+.fa-ellipsis-v{
+  color:#F3CB2E
+}
 .button{
   appearance: none;
   border: none;
@@ -245,7 +256,8 @@ textarea{
 }
 
 .color{
-    color: #686d71;
+  margin-top:10px!important;
+  color: #686d71;
 }
 
 .width{
@@ -254,6 +266,25 @@ textarea{
   font-size: 1.3rem;
 }
 
+.a-flex{
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.a-flex img{
+  border-radius: 80%;
+  height:80%;
+  width:90%;
+}
+
+.text{
+  padding-top:20px;
+}
+
+.a-flex a{
+  margin-top:90px;
+}
 .b-flex{
   display: flex;
   justify-content: center;
@@ -271,6 +302,12 @@ textarea{
 @media (max-width : 760px){
   .manager{
     margin-top :30px;
+  }
+}
+
+@media (max-width : 420px){
+  .google-text{
+    display: none;
   }
 }
 @media (max-width : 920px){
