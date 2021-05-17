@@ -7,6 +7,7 @@ import reduxThunk from 'redux-thunk';
 import './index.css';
 import App from './components/App';
 
+//Redux extension for chrome
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     reducers,

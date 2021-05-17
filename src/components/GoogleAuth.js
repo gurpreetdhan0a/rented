@@ -4,6 +4,7 @@ import {signIn, signOut} from '../actions';
 
 class GoogleAuth extends Component {
 
+    //Load api when the btton is mounted
     componentDidMount(){
         window.gapi.load('client:auth2', ()=>{
             window.gapi.client.init({
@@ -17,6 +18,7 @@ class GoogleAuth extends Component {
         });
     }
 
+    //Run function to initiate google sign in and get user's information
     onAuthChange = (isSignedIn)=>{
        if (isSignedIn){
            this.props.signIn(this.auth.currentUser.get().getId(), this.auth.currentUser.get().getBasicProfile().getGivenName());
@@ -25,6 +27,7 @@ class GoogleAuth extends Component {
        }
     }
 
+    //Render Google button
     renderAuthButton(){
         if (this.props.isSignedIn === null){
             return null;

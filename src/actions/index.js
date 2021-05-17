@@ -14,6 +14,7 @@ export const signOut = ()=>{
     }
 }
 
+//Fetch all the properties from db.json file
 export const fetchProperties = ()=>{
     return {
         type:"FETCH_PROPERTIES",
@@ -21,6 +22,7 @@ export const fetchProperties = ()=>{
     }
 }
 
+//Fetch a particular property using id
 export const fetchProperty = (id) =>{
     return {
         type: "FETCH_PROPERTY",

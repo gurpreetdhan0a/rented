@@ -26,9 +26,11 @@ class AllProperties extends Component {
     }
     
     componentDidMount(){ 
+        //Fetch all properties when the component is mounted
         this.props.fetchProperties();
     }
 
+    //Handle form submission
     handleSubmit(e){
         e.preventDefault();
         this.name = this.inputNameRef.current.value.toLowerCase();
@@ -48,6 +50,7 @@ class AllProperties extends Component {
     }
     
     renderProperties(){
+        //Show relevant messages to the user
         if(this.state.notFound === true && this.name.length > 0){
             return <div className="center"><h3 className="color error">No properties found in this area</h3></div>
         }else if(this.state.notFound === undefined){
@@ -55,7 +58,8 @@ class AllProperties extends Component {
         }else if(this.name.length === 0){
             return (<div className="center"><h3 className="color">(For demo purposes I only added Reservoir and Couburg) </h3></div>)
         }
-    
+        
+        //Go through the array and render all the properties
         return this.state.searchedProperties.map((property,index) =>{
             return (
                 <div key={index} className="center main-margin">

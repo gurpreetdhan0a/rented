@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import GoogleAuth from './GoogleAuth';
 
 class Navigation extends Component {
+    //Navigation Menu
     render() {
         return (
         <div style={{marginTop:"5px"}} className="ui secondary pointing menu black">
