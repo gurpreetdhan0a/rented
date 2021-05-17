@@ -49,6 +49,10 @@ section {
   padding-bottom:90px;
 }
 
+.round{
+  border-radius: 20px;
+}
+
 .white{
   background-color:white;
 }

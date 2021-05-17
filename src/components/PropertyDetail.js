@@ -145,7 +145,7 @@ class PropertyDetail extends Component {
                   state : {
                       propertyDetail : this.props.property
                   }
-              }}><button className="a-button">Apply with rented</button></Link>  
+              }}><button className="a-button round">Apply with rented</button></Link>  
             </div>
             </React.Fragment>
         );
